@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CommunPayments</title>
+	<style>
+
+	
+	 div{
+		background: #51B6FFFF;
+		width: 600px;
+		height: 530px;
+		border-radius: 2%;
+		margin: 30px;
+		padding: 20px  10px 20px 20px;
+		box-shadow: 0 10px 10px #666;
+	}
+
+	input{
+		width: 123px;
+		margin: 0px 3px 0px 8px;
+		border-radius:8px;
+
+	}
+
+	/*input[type="text"]{
+	    padding-left: 5px;
+
+	}
+	*/
+	#allSumma{
+		margin:  0px 0px 0px 297px;
+
+	}
+	.allSumma{
+		font-weight: 600;
+		margin: 0px 0px 0px 315px;
+
+	}
+	.sor{
+		padding: 0px 20px 0px 5px;
+		font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
+    	font-size: 18px; /* Размер шрифта в процентах */ 
+		font-weight: 600;
+	
+    }
+    #sor{
+		margin: 0px -50px 0px -40px;
+		
+	}
+    
+    #sorValue{
+    	margin: 0px 0px 0px 45px;
+    	border-radius:8px;
+    }
+
+    #elevatorValue{
+		margin: 0px  0px  0px 55px;
+		/*padding: 0px 20px 0px 0px;*/
+		//background: #C0C0C0FF;
+	}
+
+	.elevator{
+		padding: 0px 25px 0px 5px;
+		font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */
+    	font-size: 18px; /* Размер шрифта в процентах */ 
+    	font-weight: 600;
+		
+	}
+	#elevator{
+		margin: 0px -50px 0px -40px;
+		
+	}
+	.s{
+		padding: 0px 0px 0px 60px;
+	}
+	.s1{
+		padding: 0px 0px 0px 350px;
+
+	}
+	.s2{
+		padding: 0px 0px 0px 350px;
+	}
+	.after{
+		padding: 0px 0px 0px 45px;
+	}
+	.before{
+		padding: 0px 0px 0px 20px;
+	}
+	.services{
+		font-weight: 600;
+		padding: 0px  0px 0px 10px;
+		font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
+    	font-size: 18px; /* Размер шрифта в процентах */ 
+	}
+	.servicesIndicators{
+		padding: 0px  0px 0px 10px;
+		font-family: 'Times New Roman', Times, serif; /* Гарнитура текста 
+    	font-size: 16px; /* Размер шрифта в процентах */ 
+	}
+	#numberPersonsSor{
+		width: 50px;
+	}
+
+	#numberPersonsElevator{
+		width: 50px;
+	}
+
+	.tarifGas{
+		padding: 0px 0px  0px 90px;
+		width: 150px;
+
+	}
+	.tarif{
+		padding: 0px 0px  0px 90px;
+		width: 150px;
+
+	}
+
+	input #tarif{
+		width: 50px;
+
+	}
+	#sewerage{
+		margin: 0px -50px  0px -35px;
+
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div>
+		<label class="services">Газ</label></br>
+		<label class="before" >показатели до:</label>
+		<label class="after">показатели после: </label>
+		<label class="s" >Сумма</label> 
+		<label class="tarif" >Тариф</label></br>
+		<input  id="gasDo" type="text" name="" onkeyup ="gas()">
+		<input id="gasBefore" type="text" name="" onkeyup ="gas()">
+		<input id="gasSumma" type="text" name="">
+	 	<input id="tarifGas" type="text" name="" onkeyup ="tarifGas()"></br></br>
+
+		<label class="services">Электроэнергия</label></br>
+		<label class="before" >показатели до:</label>
+		<label class="after">показатели после: </label>
+		<label class="s" >Сумма</label> 
+		<label class="tarif" >Тариф</label></br>
+		<input id="electricityDo" type="text" name="" onkeyup ="electricity()">
+		<input id="electricityBefore"type="text" name=""onkeyup ="electricity()">
+		<input id="electricitySumma"type="text" name="">
+	    <input id="tarifElectricity" type="text" name="" onkeyup ="electricity()"></br></br>
+
+		<label class="services">Водоканал</label></br>
+		
+		<label class="servicesIndicators">Холодная вода</label></br>
+		<input id="sewerage" type="checkbox" name="" onClick="check()">
+		<label class="servicesIndicators">Канализация</label></br>
+		<label class="before" >показатели до:</label>
+		<label class="after">показатели после: </label>
+		<label class="s" >Сумма</label> 
+		<label class="tarif" >Тариф</label></br>
+		<input id="coldWaterDo" type="text" name="" onkeyup ="coldWater()">
+		<input id="coldWaterBefore" type="text" name="" onkeyup ="coldWater()">
+		<input id="coldWaterSumma" type="text" name="">
+		<input id="tarifColdWater" type="text" name="" onkeyup ="tarifColdWater()"></br></br>
+		
+		<label class="servicesIndicators">Горячая вода</label></br>
+		<label class="before" >показатели до:</label>
+		<label class="after">показатели после: </label>
+		<label class="s" >Сумма</label> 
+		<label class="tarif" >Тариф</label></br>
+		<input  id="hotWaterDo" type="text" name="" onkeyup ="hotWater()">
+		<input id="hotWaterBefore" type="text" name="" onkeyup ="hotWater()">
+		<input id="hotWaterSumma" type="text" name="">
+		<input id="tarifHotWater" type="text" name="" onkeyup ="tarifHotWater()"></br></br>		
+
+		
+		<label class="s2">Сумма</label>
+		<label class="tarif" >Тариф</label></br>
+		<input id="elevator" type="checkbox" name="" onClick="check()">
+		<label class="elevator">Лифт</label>
+		<input  id="numberPersonsElevator" type="number" name="" onClick="check()" min="0">
+		<label> Кол.м  <sup><small>2</small></sup></label>
+		<input id="elevatorValue"  type="text" name="">
+		<input id="tarifElevator" type="text" name="" onkeyup = "tarifElevator()"></br>
+
+
+		<label class="s1" >Сумма</label>
+		<label class="tarif" >Тариф</label></br>
+		<input id="sor" type="checkbox" name="" onClick="check()">
+		<label class="sor">Мусор</label>
+		<input  id="numberPersonsSor" type="number" name="" onClick="check()" min="0">
+		<label> Кол.чел.</label>
+		<input id="sorValue" class="sorValue" type="text" name="">
+		<input id="tarifSor" type="text" name="" onkeyup = "tarifSor()"></br></br>
+
+		<label class="allSumma">Итого Сумма</label> </br>
+		<input   id="allSumma" class="summa" type="text" name="" ></br>		
+	</div>
+<script>
+
+var sewerage1 = 0;
+
+var tarifGas7 = 6.8;
+var tarifGas8 = 6.8;
+
+var tarifElectricity7 = 0.95;
+var tarifElectricity8 = 1.95;
+var tarifElectricity9 = 0.95;
+
+var tarifColdWater7 = 7.98 ;
+var tarifColdWater8 = 7.98 ;
+
+var tarifHotWater7 = 80.48;
+var tarifHotWater8 = 80.48;
+
+var tarifElevator7 = 4.16;
+var tarifElevator8 = 4.16;
+
+var tarifSor7 = 12.05;
+var tarifSor8 = 12.05;
+
+
+
+function tarifGas(){
+    var tarifGas1 = document.getElementById('tarifGas').value;
+
+    if(tarifGas1 && tarifGas1 != 0) {
+		tarifGas7 = tarifGas1;
+	}else{
+		tarifGas7 = tarifGas8;
+	}
+	 gas();
+}
+function tarifColdWater(){
+    var tarifColdWater1 = document.getElementById('tarifColdWater').value;
+
+    if(tarifColdWater1 && tarifColdWater1 != 0) {
+		tarifColdWater7 = tarifColdWater1;
+	}else{
+		tarifColdWater7 = tarifColdWater8;
+	}
+	coldWater();
+}
+function tarifHotWater(){
+    var tarifHotWater1 = document.getElementById('tarifHotWater').value;
+
+    if(tarifHotWater1 && tarifHotWater1 != 0) {
+		tarifHotWater7 = tarifHotWater1;
+	}else{
+		tarifHotWater7 = tarifHotWater8;
+	}
+	hotWater();
+}
+function tarifElevator(){
+    var tarifElevator1 = document.getElementById('tarifElevator').value;
+
+    if(tarifElevator1 && tarifElevator1 != 0) {
+		tarifElevator7 = tarifElevator1;
+	}else{
+		tarifElevator7 = tarifElevator8;
+	}
+	check();
+}
+function tarifSor(){
+    var tarifSor1 = document.getElementById('tarifSor').value;
+
+    if(tarifSor1 && tarifSor1 != 0) {
+		tarifSor7 = tarifSor1;
+	}else{
+		tarifSor7 = tarifSor8;
+	}
+	check();
+}
+
+
+
+// function tarifElectricity(){
+//     var tarifElectricity1 = document.getElementById('tarifElectricity').value;
+//     var electricityDo = document.getElementById('electricityDo').value;
+// 	var electricityBefore = document.getElementById('electricityBefore').value;
+// 	var summa = Number(electricityBefore) - Number(electricityDo);
+
+//     if(tarifElectricity1 && tarifElectricity1 != 0 && summa <100) {
+// 		tarifElectricity7 = tarifElectricity1;
+// 		alert("<100");
+// 	}else if(tarifElectricity1 && tarifElectricity1 != 0  && summa >100){
+// 		tarifElectricity7 = tarifElectricity9;
+// 		alert(">100");
+// 	}else {
+// 		tarifElectricity7 = tarifElectricity8;
+// 		alert("=100");
+// 	}
+// 	 electricity();
+
+//}
+function gas() {
+	var gasDo = document.getElementById('gasDo').value;
+	var gasBefore = document.getElementById('gasBefore').value;
+	var gasSumma1 = document.getElementById('gasSumma');
+	
+
+	
+
+	var gasSumma = document.createElement("input");
+		gasSumma.id = "gasSumma";
+		gasSumma.value = (Number(gasBefore) - Number(gasDo))*tarifGas7;
+	    gasSumma1.parentNode.replaceChild(gasSumma,gasSumma1);
+	    totalSumma();
+}
+
+function electricity() {
+	var electricityDo = document.getElementById('electricityDo').value;
+	var electricityBefore = document.getElementById('electricityBefore').value;
+	var electricitySumma1 = document.getElementById('electricitySumma');
+ 	var tarifElectricity1 = document.getElementById('tarifElectricity').value;
+	var summa = Number(electricityBefore) - Number(electricityDo);
+
+
+    if(!tarifElectricity1  && summa <= 100) {
+		tarifElectricity7 = tarifElectricity9;
+		var electricitySumma = document.createElement("input");
+			electricitySumma.id = "electricitySumma";
+			electricitySumma.value = (Number(electricityBefore) - Number(electricityDo))* tarifElectricity7;
+	    	electricitySumma1.parentNode.replaceChild(electricitySumma,electricitySumma1);
+		//alert(tarifElectricity7);
+	}else if(!tarifElectricity1  && summa > 100){
+		tarifElectricity7 = tarifElectricity8;
+		var electricitySumma = document.createElement("input");
+			electricitySumma.id = "electricitySumma";
+			electricitySumma.value = (Number(electricityBefore) - Number(electricityDo))* tarifElectricity7;
+	    	electricitySumma1.parentNode.replaceChild(electricitySumma,electricitySumma1);
+		//alert(tarifElectricity7);
+	}else {
+		tarifElectricity7 = tarifElectricity1;
+		var electricitySumma = document.createElement("input");
+			electricitySumma.id = "electricitySumma";
+			electricitySumma.value =(Number(electricityBefore) - Number(electricityDo)) * tarifElectricity7;
+	    	electricitySumma1.parentNode.replaceChild(electricitySumma,electricitySumma1);
+	    	//alert(tarifElectricity7);
+	}
+	    	totalSumma();
+	    
+	    	
+}
+
+function coldWater() {
+	var coldWaterDo = document.getElementById('coldWaterDo').value;
+	var coldWaterBefore = document.getElementById('coldWaterBefore').value;
+	var coldWaterSumma1 = document.getElementById('coldWaterSumma');
+
+	var coldWaterSumma = document.createElement("input");
+		coldWaterSumma.id = "coldWaterSumma";
+		coldWaterSumma.value = ((Number(coldWaterBefore) - Number(coldWaterDo))*( Number(tarifColdWater7) + sewerage1)).toFixed(2);
+	    coldWaterSumma1.parentNode.replaceChild(coldWaterSumma,coldWaterSumma1);
+	   
+	    totalSumma();
+}
+
+function hotWater() {
+	var hotWaterDo = document.getElementById('hotWaterDo').value;
+	var hotWaterBefore = document.getElementById('hotWaterBefore').value;
+	var hotWaterSumma1 = document.getElementById('hotWaterSumma');
+
+	var hotWaterSumma = document.createElement("input");
+		hotWaterSumma.id = "hotWaterSumma";
+		hotWaterSumma.value = ((Number(hotWaterBefore) - Number(hotWaterDo))* tarifHotWater7).toFixed(2);
+	    hotWaterSumma1.parentNode.replaceChild(hotWaterSumma,hotWaterSumma1);
+	    totalSumma();
+}
+
+function totalSumma() {
+	var gasSumma = document.getElementById('gasSumma').value;
+	var electricitySumma = document.getElementById('electricitySumma').value;
+	var coldWater = document.getElementById('coldWaterSumma').value;
+	var hotWater = document.getElementById('hotWaterSumma').value;
+	var sorValue = document.getElementById('sorValue').value;
+	var elevatorValue = document.getElementById('elevatorValue').value;
+
+	var allSumma = document.getElementById('allSumma');
+
+	var totalSumma = document.createElement("input");
+	totalSumma.id = "allSumma";
+
+	totalSumma.value = Number(gasSumma) + Number(electricitySumma)+ Number(coldWater) + Number(hotWater) + Number(sorValue) + Number(elevatorValue) ;
+	allSumma.parentNode.replaceChild(totalSumma,allSumma);
+
+	}
+
+
+function check() {
+var sor = document.getElementById('sor');
+var elevator = document.getElementById('elevator');
+var sewerage = document.getElementById('sewerage');
+var numberPersonsSor = document.getElementById('numberPersonsSor').value;
+var numberPersonsElevator = document.getElementById('numberPersonsElevator').value;
+
+
+	if (sor.checked) {
+		
+		var sor = document.getElementById('sorValue');
+		var sor1 = document.createElement("input");
+		sor1.id = "sorValue"
+	    sor1.class = "sorValue";
+	    sor1.value = tarifSor7 * numberPersonsSor;
+	    sor.parentNode.replaceChild(sor1,sor);
+
+	}else {
+		
+		var sor = document.getElementById('sorValue');
+		var sor1 = document.createElement("input");
+		sor1.id = "sorValue"
+	    sor1.class = "sorValue";
+	    sor1.value = 0;
+	    sor.parentNode.replaceChild(sor1,sor);
+	}
+
+
+	if (elevator.checked) {	
+		var elevator = document.getElementById('elevatorValue');
+		var elevator1 = document.createElement("input");
+		elevator1.id = "elevatorValue"
+	   // elevator1.class = "elevatorValue";
+	    elevator1.value = tarifElevator7 * numberPersonsElevator;
+	    elevator.parentNode.replaceChild(elevator1,elevator);
+
+	}else {
+		var elevator = document.getElementById('elevatorValue');
+		var elevator1 = document.createElement("input");
+		elevator1.id = "elevatorValue"
+	    //elevator1.class = "elevatorValue";
+	    elevator1.value = 0;
+	    elevator.parentNode.replaceChild(elevator1,elevator);
+	}
+
+	if (sewerage.checked) {	
+		
+		sewerage1 = 5.232;
+		coldWater();
+
+	}else {
+		sewerage1 = 0;
+		coldWater();
+		
+	}
+
+
+	totalSumma();
+	//alert(numberPersonsSor);
+	//console.log(numberPersonsSor);
+}
+
+</script>	
+	
+</body>
+</html>
