@@ -65,7 +65,7 @@ function sliderLeft() {
 	var polosa = document.getElementById('polosa');
 	im = Number(im) + 552.455;
 	if (im > 1) {
-		im = -6077;
+		im = -6080;
 	}
 	polosa.style.top = im +'px';
 }
