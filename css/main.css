@@ -5,6 +5,7 @@ body {
 /*header*/
 header{
 	max-width: 1366px;
+	margin: auto;
 }
 @font-face {
     font-family: pe-icon-7-stroke; 
@@ -293,8 +294,12 @@ header{
 footer{
 	min-height: 285px;
 	background-color: #141414;
+	margin: auto;
+
 }
 .footer{
+	max-width: 1180px;
+	margin: auto;
 	font-family: "Nunito Sans";	
 	display: flex;
 	flex-direction: row;
