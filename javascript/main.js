@@ -63,7 +63,7 @@ document.getElementById('sliderRight').onclick = sliderRight;
 function sliderLeft() {
 	
 	var polosa = document.getElementById('polosa');
-	im = Number(im) + 552.455;
+	im = Number(im) + 552.4555;
 	if (im > 1) {
 		im = -6080;
 	}
@@ -73,7 +73,7 @@ function sliderRight() {
 	
 	var polosa = document.getElementById('polosa');
 	im = Number(im)-552.455;
-	if (im < -6077) {
+	if (im < -6081) {
 		im = 0;
 	}
 	polosa.style.top = im+'px';
