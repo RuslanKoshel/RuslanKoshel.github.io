@@ -43,19 +43,42 @@
 //     style = about.style;
 //     style.color = "##212121";
 // }
-
+var im = 0;
 var modal =document.querySelector('.modal');
-
 document.getElementById('galleryImg').onclick = galleryImg;
 function galleryImg() {
 	document.querySelector('#galleryImg').addEventListener('click',function(e){
-	var im = e.target.id;
+	im = e.target.id;
 	var polosa = document.getElementById('polosa');
 	polosa.style.top = im +'px';
-	modal.style.display = 'flex'
+	modal.style.display = 'flex';
+	
 })
 
 }
+
+document.getElementById('sliderLeft').onclick = sliderLeft;
+document.getElementById('sliderRight').onclick = sliderRight;
+
+function sliderLeft() {
+	
+	var polosa = document.getElementById('polosa');
+	im = Number(im) + 552.455;
+	if (im > 1) {
+		im = -6077;
+	}
+	polosa.style.top = im +'px';
+}
+function sliderRight() {
+	
+	var polosa = document.getElementById('polosa');
+	im = Number(im)-552.455;
+	if (im < -6078) {
+		im = 0;
+	}
+	polosa.style.top = im+'px';
+}	
+
 
 document.getElementById('close').onclick = close;
 function close() {
@@ -69,31 +92,30 @@ window.addEventListener('click',function(e){
 	} 
 })
 
+// var top1 = 0;
 
-document.getElementById('sliderLeft').onclick = sliderLeft;
-document.getElementById('sliderRight').onclick = sliderRight;
-var top1 = 0;
-var bottom = 0;
+// document.getElementById('sliderLeft').onclick = sliderLeft;
+// document.getElementById('sliderRight').onclick = sliderRight;
 
-function sliderLeft() {
+// function sliderLeft() {
 	
-	var polosa = document.getElementById('polosa');
-	top1 = top1+552.4545;
-	if (top1> 0) {
-		top1 = -6077;
-	}
-	polosa.style.top = top1 +'px';
+// 	var polosa = document.getElementById('polosa');
+// 	top1 = top1+552.4545;
+// 	if (top1> 0) {
+// 		top1 = -6077;
+// 	}
+// 	polosa.style.top = top1 +'px';
 
-}
-function sliderRight() {
+// }
+// function sliderRight() {
 	
-	var polosa = document.getElementById('polosa');
-	top1 = top1-552.4545;
-	if (top1< -6077) {
-		top1 = 0;
-	}
-	polosa.style.top = top1+'px';
-}
+// 	var polosa = document.getElementById('polosa');
+// 	top1 = top1-552.4545;
+// 	if (top1< -6077) {
+// 		top1 = 0;
+// 	}
+// 	polosa.style.top = top1+'px';
+// }
 
 // document.querySelector('#galleryImg').addEventListener('click',function(e){
 // 	var im = e.target.id;
